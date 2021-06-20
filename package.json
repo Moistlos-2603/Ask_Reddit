@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Moistlos-2603/Ask_Reddit#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "fs": "0.0.1-security",
     "react": "^17.0.2",
     "request": "^2.88.2"
