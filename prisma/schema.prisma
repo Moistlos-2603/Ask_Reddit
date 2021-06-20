@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model postst {
+  title         Bytes  @db.MediumBlob
+  author        Bytes  @db.MediumBlob
+  created       Int
+  id            String @db.Text
+  score         Int
+  selftext      String @db.Text
+  selftext_html String @db.Text
+  subreddit     String @db.Text
+  subreddit_id  Int
+  url           String @db.Text
+  banned_by     String @db.Text
+
+  @@ignore
+}
