@@ -1,5 +1,5 @@
 const api = require('./api/reddit_top_of_sub_data');
-const axios = require('axios');
+// const axios = require('axios');
 const React = require('react');
 
 class TopPosts extends React.Component{
@@ -7,7 +7,7 @@ class TopPosts extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      data: ""
+      data: []
     };
    
   }
@@ -25,32 +25,32 @@ class TopPosts extends React.Component{
   }
 
   render(){
-    // const res_data = this.state.data;   
-    const res_data = "sdf"
+    var res_data = this.state.data;   
+    // const res_data = "sdf"
 
     console.log("idfk:")
-    window.idfk = res_data
+    window.idfk = this.state.data;   
 
 
-    return(
-      <div>
-        <h1>{res_data}</h1>
-        <div>ts</div>
-      </div>
-    )
     // return(
     //   <div>
-    //      {res_data.children.map(children => {
-    //       return(
-    //       <div>
-    //         <h1>{children.data.title}</h1>
-    //         <p>{children.data.selftext}</p>
-    //       </div>
-    //       )
-    //     })} 
-    //     <h1>test</h1>
+    //     <h1>{res_data}</h1>
+    //     <div>ts</div>
     //   </div>
     // )
+    return(
+      <div>
+        <h1>test</h1>
+         {res_data.map(children => {
+          return(
+          <div>
+            <h1>{children.data.title}</h1>
+            {children.data.selftext_html}
+          </div>
+          )
+        })} 
+      </div>
+    )
   }
 }
 

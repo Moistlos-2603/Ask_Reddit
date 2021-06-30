@@ -10,7 +10,7 @@
     .then(response => {
       console.log(response.data)
       var result = response.data;
-      resolve(result);
+      resolve(result.data.children);
 
     })
       .catch(error => {
@@ -24,7 +24,7 @@
 
 
   
-}
-}
+}}
+
 //reddit_top_of_sub_data('ProRevenge', 10, "day")
 
