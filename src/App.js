@@ -1,11 +1,11 @@
 import './App.css';
 import {TopPosts} from "./top_posts"
-
+import {Header} from "./Components/header"
 function App() {
   return (
     <div>
-      <TopPosts sub="ProRevenge" limet="10" time_filter="day" />
-      <h1>hi</h1>
+      <Header></Header>
+      <TopPosts sub="tailsfromtechsupport" limet="5" time_filter="day" />
     </div>
 
     

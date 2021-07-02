@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+h1{
+  margin: 0;
+  padding: 0;
+}
+.text{
+  white-space: pre-wrap
+}
+body{
+  background-color: black;
+}
+.post{
+  color: #c3c3c3;
+  width: 80%;
+  max-width: 1000px;
+  /* border-color: black;
+  border-width: 2px;
+  border-style: solid; */
+  padding: 10px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.header{
+  width: 100%;
+  height: 60px;
+  /* background-color: rgb(26, 26, 100); */
+  background-color: rgb(26, 26, 27);
+
+}
+
+.header_font{
+  font-family: 'Krona One', sans-serif;
+  color: white;
+  padding: 10px;
+}

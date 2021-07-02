@@ -15,8 +15,8 @@
     })
       .catch(error => {
         this.setState({});
-        console.log(error);
         reject(error)
+        throw(error);
     });
 
   })
