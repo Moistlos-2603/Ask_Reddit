@@ -3,8 +3,8 @@
 
 return(
   <div className="header">
-  <h1 className="header_font">Ask Reddit Reader</h1>
-</div>
+    <h1 className="header_font">Ask Reddit Reader</h1>
+  </div>
 )
 
 

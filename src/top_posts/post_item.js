@@ -8,7 +8,12 @@ function PostItem(params){
 
 
 
-
+  function htmlDecode(input){
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
 
 
 
@@ -21,10 +26,14 @@ function PostItem(params){
       <h2>{data.title}</h2>
       <p>{datum.getTime}</p>
       {/* <p>{data.created_utc}</p> */}
-      <p className="text">{data.selftext}</p>
+      
+      
+      <div className="text">{htmlDecode(data.selftext).replace(/&#x200B;/gi, "")}</div>
+
+
       <p>{data.score}</p>
     </div>
   )
 }
 
-export {PostItem};
+export { PostItem };
