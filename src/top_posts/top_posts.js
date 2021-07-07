@@ -17,16 +17,18 @@ class TopPosts extends React.Component{
     this.handleChange_limet = this.handleChange_limet.bind(this);
     this.handleChange_time_filter = this.handleChange_time_filter.bind(this);
   }
+
+
   componentDidMount(){
-    
-    window.get_get_api =  async (sub , limet , time_filter) => {
+    async function get_get_api (sub , limet , time_filter){
       var result = await api.reddit_top_of_sub_data(sub , limet , time_filter)
       console.log(result)
       this.setState({
         data: await result
       })
     }
-    //window.get_get_api(this.props.sub , this.props.limet , this.props.time_filter);
+
+    get_get_api(this.props.sub , this.props.limet , this.props.time_filter);
   }
 
 
@@ -34,7 +36,7 @@ class TopPosts extends React.Component{
     this.setState({
       sub: event.target.value
     })
-    this.props.sub
+    
   }
   handleChange_limet(event){
     this.setState({
@@ -48,8 +50,14 @@ class TopPosts extends React.Component{
   }
 
   handleSubmit(event){
-
-    window.get_get_api(this.state.sub, this.state.limet, this.state.time_filter)
+    async function get_get_api (sub , limet , time_filter){
+      var result = await api.reddit_top_of_sub_data(sub , limet , time_filter)
+      console.log(result)
+      this.setState({
+        data: await result
+      })
+    }
+    get_get_api(this.state.sub, this.state.limet, this.state.time_filter)
     event.preventDefault();
   }
 
@@ -70,12 +78,12 @@ class TopPosts extends React.Component{
           <input type="text" value={this.state.sub} onChange={this.handleChange_sub}/>
 
           <label>
-            sup:
+            limit:
           </label>
           <input type="text" value={this.state.limet} onChange={this.handleChange_limet}/>
 
           <label>
-            sup:
+            time Filter:
           </label>
           <input type="text" value={this.state.time_filter} onChange={this.handleChange_time_filter}/>
 
