@@ -3,7 +3,7 @@ function PostItem(params){
   const data = params.data
   var idfk = new Date(data.created_utc*1000);
   // var datum =  idfk.getDay() + "." + idfk.getMonth() + "." + idfk.getFullYear() + " " + idfk.getHours() + ":" + idfk.getMinutes();
-  var datum = idfk
+  // var datum = idfk
 
 
 
@@ -24,14 +24,16 @@ function PostItem(params){
   return(
     <div className="post">
       <h2>{data.title}</h2>
-      <p>{datum.getTime}</p>
-      {/* <p>{data.created_utc}</p> */}
+      {/* <p>{datum.getTime}</p> */}
+      <p>{data.created_utc}</p>
+      
       
       
       <div className="text">{htmlDecode(data.selftext).replace(/&#x200B;/gi, "")}</div>
 
 
       <p>{data.score}</p>
+
     </div>
   )
 }

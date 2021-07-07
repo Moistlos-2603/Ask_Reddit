@@ -16,6 +16,8 @@ class TopPosts extends React.Component{
     this.handleChange_sub = this.handleChange_sub.bind(this);
     this.handleChange_limet = this.handleChange_limet.bind(this);
     this.handleChange_time_filter = this.handleChange_time_filter.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
     
@@ -26,7 +28,12 @@ class TopPosts extends React.Component{
         data: await result
       })
     }
-    //window.get_get_api(this.props.sub , this.props.limet , this.props.time_filter);
+    window.get_get_api(this.props.sub , this.props.limet , this.props.time_filter);
+
+    // ProRevenge
+    // tailsfromtechsupport
+    // TellMeAFact
+    // HFY
   }
 
 
@@ -34,7 +41,6 @@ class TopPosts extends React.Component{
     this.setState({
       sub: event.target.value
     })
-    this.props.sub
   }
   handleChange_limet(event){
     this.setState({
@@ -50,6 +56,7 @@ class TopPosts extends React.Component{
   handleSubmit(event){
 
     window.get_get_api(this.state.sub, this.state.limet, this.state.time_filter)
+    console.log(this.state.sub, this.state.limet, this.state.time_filter)
     event.preventDefault();
   }
 
@@ -70,14 +77,22 @@ class TopPosts extends React.Component{
           <input type="text" value={this.state.sub} onChange={this.handleChange_sub}/>
 
           <label>
-            sup:
+            limit:
           </label>
           <input type="text" value={this.state.limet} onChange={this.handleChange_limet}/>
 
           <label>
-            sup:
+            time_filter:
           </label>
-          <input type="text" value={this.state.time_filter} onChange={this.handleChange_time_filter}/>
+          <select value={this.state.time_filter} onChange={this.handleChange_time_filter}>
+            <option value={"all"}>all</option>
+            <option value={"hour"}>hour</option>
+            <option value={"day"}>day</option>
+            <option value={"week"}>week</option>
+            <option value={"month"}>month</option>
+            <option value={"year"}>year</option>
+          </select>
+          {/* <input type="text" value={this.state.time_filter} onChange={this.handleChange_time_filter}/> */}
 
 
           <input type="submit" value="Submit" />
@@ -90,6 +105,9 @@ class TopPosts extends React.Component{
 
           )
         })} 
+        <div>
+          
+        </div>
       </div>
     )
   }

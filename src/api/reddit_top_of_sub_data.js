@@ -6,7 +6,8 @@
  module.exports = {reddit_top_of_sub_data: (sub, limet, time_filter) => {
   const axios = require('axios');
   return new Promise(function(resolve, reject){
-    axios.get('https://www.reddit.com/r/'+ sub + '/.json?limit=' + limet + '&time_filter=' + time_filter)
+    console.log('https://www.reddit.com/r/'+ sub + '/top/.json?limit=' + limet + '&t=' + time_filter)
+    axios.get('https://www.reddit.com/r/'+ sub + '/top/.json?limit=' + limet + '&t=' + time_filter)
     .then(response => {
       console.log(response.data)
       var result = response.data;
