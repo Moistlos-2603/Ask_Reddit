@@ -19,6 +19,8 @@ class TopPosts extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+
   componentDidMount(){
     
     window.get_api_data =  async (sub , limet , time_filter) => {
@@ -41,6 +43,7 @@ class TopPosts extends React.Component{
     this.setState({
       sub: event.target.value
     })
+    
   }
   handleChange_limet(event){
     this.setState({
