@@ -14,7 +14,12 @@ code {
 label{
   color: white;
 }
-
+Link{
+  color: white;
+}
+nav{
+  display: inline-block;
+}
 h1{
   margin: 0;
   padding: 0;
@@ -51,4 +56,5 @@ body{
   font-family: 'Krona One', sans-serif;
   color: white;
   padding: 10px;
+  display: inline-block;
 }

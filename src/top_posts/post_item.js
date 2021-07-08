@@ -1,7 +1,7 @@
 // Element für einzelnen Post 
 function PostItem(params){
   const data = params.data
-  var idfk = new Date(data.created_utc*1000);
+  // var idfk = new Date(data.created_utc*1000);
   // var datum =  idfk.getDay() + "." + idfk.getMonth() + "." + idfk.getFullYear() + " " + idfk.getHours() + ":" + idfk.getMinutes();
   // var datum = idfk
 

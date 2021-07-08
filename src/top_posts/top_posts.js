@@ -21,14 +21,14 @@ class TopPosts extends React.Component{
   }
   componentDidMount(){
     
-    window.get_get_api =  async (sub , limet , time_filter) => {
+    window.get_api_data =  async (sub , limet , time_filter) => {
       var result = await api.reddit_top_of_sub_data(sub , limet , time_filter)
       console.log(result)
       this.setState({
         data: await result
       })
     }
-    window.get_get_api(this.props.sub , this.props.limet , this.props.time_filter);
+    window.get_api_data(this.props.sub , this.props.limet , this.props.time_filter);
 
     // ProRevenge
     // tailsfromtechsupport
@@ -55,7 +55,7 @@ class TopPosts extends React.Component{
 
   handleSubmit(event){
 
-    window.get_get_api(this.state.sub, this.state.limet, this.state.time_filter)
+    window.get_api_data(this.state.sub, this.state.limet, this.state.time_filter)
     console.log(this.state.sub, this.state.limet, this.state.time_filter)
     event.preventDefault();
   }
@@ -95,7 +95,6 @@ class TopPosts extends React.Component{
           {/* <input type="text" value={this.state.time_filter} onChange={this.handleChange_time_filter}/> */}
 
 
-          <input type="submit" value="Submit" />
         </form>
 
 
