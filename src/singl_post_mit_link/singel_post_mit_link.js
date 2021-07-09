@@ -1,4 +1,3 @@
-const { render } = require('@testing-library/react');
 const React = require('react');
 const api = require('../api/reddit_singel_post')
 

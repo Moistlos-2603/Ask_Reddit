@@ -10,11 +10,13 @@ class Home extends React.Component{
   
   render(){
     return(
-      <Header/>
-
+      // <Header/>
+      <div>
+        <h1 style={{color: "#ffffff"}}>indey</h1>
+      </div>
     )
   }
 }
 
 
-export default Home
+export {Home}

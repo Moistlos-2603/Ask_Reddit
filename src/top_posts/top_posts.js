@@ -9,9 +9,9 @@ class TopPosts extends React.Component{
     super(props);
     this.state = {
       data: [],
-      sub: "",
-      limet: undefined,
-      time_filter: ""
+      sub: this.props.sub,
+      limet: 10,
+      time_filter: "all"
     };
     this.handleChange_sub = this.handleChange_sub.bind(this);
     this.handleChange_limet = this.handleChange_limet.bind(this);
@@ -95,16 +95,13 @@ class TopPosts extends React.Component{
             <option value={"month"}>month</option>
             <option value={"year"}>year</option>
           </select>
-          {/* <input type="text" value={this.state.time_filter} onChange={this.handleChange_time_filter}/> */}
-
+          <input type="submit" value="Submit" />
 
         </form>
-
 
          {res_data.map(children => {
           return(
             <PostItem data={children.data} key={children.data.id} />
-
           )
         })} 
         <div>

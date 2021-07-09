@@ -17,10 +17,17 @@ label{
 }
 Link{
   color: white;
+  display: inline-block;
+  flex: auto;
 }
-nav{
+ul{
   display: inline-block;
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+} 
 h1{
   margin: 0;
   padding: 0;
@@ -57,5 +64,25 @@ body{
   font-family: 'Krona One', sans-serif;
   color: white;
   padding: 10px;
-  display: inline-block;
+  /* display: inline-block; */
+}
+
+
+.nav_item{
+  flex: auto;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.test1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.idk{
+  order: 0;
+  align-self: flex-start;
 }
